@@ -5,6 +5,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -66,6 +67,7 @@ iframe {
 .container {
   max-width: 1660px;
   margin-inline: auto;
+  padding-inline: 20px;
 }
 
 .mb-3 {

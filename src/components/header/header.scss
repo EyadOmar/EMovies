@@ -1,0 +1,68 @@
+@use '../../scss/' as *;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
+
+header {
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: height 300ms ease, background-color 300ms ease;
+  font-weight: 700;
+  font-size: 1.5rem;
+
+  &.shrink {
+    height: $header-shrink-height;
+    background-color: $body-bg;
+  }
+
+  .header__wrap {
+    @include flex(center, space-between);
+    height: 100%;
+    padding: 0 2rem;
+    @include mobile {
+      justify-content: center;
+    }
+
+    ul {
+      @include flex(center, unset);
+      gap: 1rem;
+      margin-left: 2rem;
+
+      li {
+        padding: 5px 0;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          height: 2px;
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+          width: 0;
+          background-color: $main-clr;
+          transition: width 500ms ease;
+        }
+        &.active::after,
+        &:hover::after {
+          width: 75%;
+        }
+      }
+
+      @include mobile {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 5rem;
+        width: 100%;
+        background-color: $body-bg;
+        padding: 0 2rem;
+        box-shadow: $box-shadow;
+        @include flex(center, space-between);
+        margin-left: 0;
+      }
+    }
+  }
+}
