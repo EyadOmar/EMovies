@@ -1,17 +1,18 @@
 import './button.scss';
 import PropTypes from 'prop-types';
-function Button({ Children, type, onClick }) {
+import { Children } from 'react';
+function Button({ children, onClick }) {
   return (
-    <button className={`btn ${type}`} onClick={() => onClick()}>
-      {Children}
+    <button className={`btn`} onClick={() => onClick()}>
+      {Children.map(children, (child) => child)}
     </button>
   );
 }
 
-function OutLinedButton({ Children, type, onClick }) {
+export function OutLinedButton({ children, onClick }) {
   return (
-    <button className={`btn-outlined ${type}`} onClick={() => onClick()}>
-      {Children}
+    <button className={`btn btn-outlined`} onClick={() => onClick()}>
+      {Children.map(children, (child) => child)}
     </button>
   );
 }

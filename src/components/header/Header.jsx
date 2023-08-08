@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import './header.scss';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 const headerNav = [
   {
@@ -24,7 +24,23 @@ function Header() {
   const headeRef = useRef(null);
 
   const active = headerNav.findIndex((e) => e.path === activeLink);
-  console.log(active);
+
+  useEffect(() => {
+    const shrinkHeader = () => {
+      if (
+        document.body.scrollTop > 100 ||
+        document.documentElement.scrollTop > 100
+      )
+        headeRef.current.classList.add('shrink');
+      else headeRef.current.classList.remove('shrink');
+    };
+
+    window.addEventListener('scroll', shrinkHeader);
+
+    return () => {
+      window.removeEventListener('scroll', shrinkHeader);
+    };
+  }, []);
   return (
     <header ref={headeRef}>
       <div className="header__wrap container">

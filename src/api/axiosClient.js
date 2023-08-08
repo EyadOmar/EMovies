@@ -2,11 +2,18 @@ import api from './apiConfig';
 import axios from 'axios';
 import queryString from 'query-string';
 
-const axiosClient = axios.create({
-  baseUrl: api.baseURL,
+const configHttps = {
   headers: {
     'Content-tpye': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Content-Type': 'text/plain',
   },
+};
+
+const axiosClient = axios.create({
+  method: 'GET',
+  baseURL: api.baseUrl,
+  https: configHttps,
   paramsSerializer: (params) =>
     queryString.stringify({ ...params, api_key: api.apiKey }),
 });
