@@ -1,0 +1,59 @@
+@use '../../scss/' as *;
+
+.movies_List {
+  .swiper-slide {
+    width: 15%;
+
+    @include tablet {
+      width: 30%;
+    }
+
+    @include mobile {
+      width: 40%;
+    }
+
+    img {
+      aspect-ratio: 1;
+      height: 350px;
+      object-fit: contain;
+    }
+  }
+}
+
+.movie_card {
+  position: relative;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 160%;
+  border-radius: $border-radius;
+  margin-bottom: 1rem;
+
+  .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    inset: 0;
+    background-color: #000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: $border-radius;
+  }
+
+  @media (hover: hover) {
+    &:hover::before {
+      opacity: 0.8;
+    }
+    &:hover .btn {
+      transform: translate(-50%, -50%) scale(1);
+      box-shadow: $box-shadow;
+    }
+  }
+}

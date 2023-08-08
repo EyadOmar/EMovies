@@ -67,7 +67,11 @@ iframe {
 .container {
   max-width: 1660px;
   margin-inline: auto;
-  padding-inline: 20px;
+  padding-inline: 40px;
+
+  @include tablet {
+    padding-inline: 20px;
+  }
 }
 
 .mb-3 {
@@ -78,10 +82,10 @@ iframe {
   margin-bottom: 2rem;
 }
 
-.section {
+section {
   padding: 0 2rem;
 }
 
-.section__header {
+.section_header {
   @include flex(center, space-between);
 }

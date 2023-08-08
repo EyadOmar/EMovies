@@ -18,7 +18,6 @@ function HeroSlide() {
         const params = { page: 1 };
         const res = await tmdbApi.getMoviesList(movieType.popular, { params });
         setMovies(res.results.slice(0, 4));
-        console.log(movies);
       } catch (error) {
         console.log(error);
       }

@@ -5,16 +5,12 @@
 }
 
 .hero-slide__item {
-  padding: 9rem 0 9rem 3rem;
+  padding: 9rem 0;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   width: 100%;
-
-  @include tablet {
-    padding: 9rem 0;
-  }
 
   &::before,
   &::after {
