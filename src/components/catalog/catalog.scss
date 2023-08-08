@@ -12,6 +12,22 @@
   position: relative;
 }
 
+.search {
+  text-align: center;
+  padding-block: 3rem;
+
+  input {
+    border: 2px solid $main-clr;
+    background-color: black;
+    padding: 0.7rem 1.7rem;
+    font-size: 1.3rem;
+    border-radius: $border-radius;
+    color: white;
+    font-family: $ff;
+    text-align: center;
+  }
+}
+
 .catalog_grid {
   .catalog_grid_content {
     display: grid;
