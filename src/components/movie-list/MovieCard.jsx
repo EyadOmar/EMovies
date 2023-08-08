@@ -6,10 +6,11 @@ import Button from '../button/Button';
 function MovieCard({ item, cate }) {
   const itemLink = `/${category[cate]}/${item.id}`;
   const imgLink = apiConfig.w500Image(item.poster_path);
+
   return (
     <Link to={itemLink}>
       <div
-        className="movie_card"
+        className="movie_card lazy"
         style={{ backgroundImage: `url(${imgLink})` }}
       >
         <Button>

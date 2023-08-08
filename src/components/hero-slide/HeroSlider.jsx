@@ -40,7 +40,7 @@ function HeroSlide() {
               return (
                 <HeroSlideItem
                   movie={movie}
-                  classNameProp={isActive ? 'active' : ''}
+                  classNameProp={`${isActive ? 'active' : ''}`}
                 />
               );
             }}

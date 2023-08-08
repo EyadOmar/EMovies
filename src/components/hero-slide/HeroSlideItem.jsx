@@ -45,7 +45,11 @@ const HeroSlideItem = ({ movie, classNameProp }) => {
           </div>
         </div>
         <div className="hero-slide__item_content_poster">
-          <img src={apiConfig.w500Image(movie.poster_path)} alt={movie.title} />
+          <img
+            src={apiConfig.w500Image(movie.poster_path)}
+            alt={movie.title}
+            loading="lazy"
+          />
         </div>
       </div>
     </div>
