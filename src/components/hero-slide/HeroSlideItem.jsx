@@ -40,9 +40,7 @@ const HeroSlideItem = ({ movie, classNameProp }) => {
           <h2>{movie.title}</h2>
           <p>{movie.overview}</p>
           <div className="btns">
-            <Button onClick={() => nav.push('/movie/' + movie.id)}>
-              Watch Now
-            </Button>
+            <Button onClick={() => nav('/movie/' + movie.id)}>Watch Now</Button>
             <OutLinedButton onClick={openTrailer}>Watch Trailer</OutLinedButton>
           </div>
         </div>
