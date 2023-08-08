@@ -1,0 +1,32 @@
+@use '../../scss/' as *;
+
+.catalog_header {
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  @include flex(center, center);
+  padding: $header-height 0 2rem;
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+  position: relative;
+}
+
+.catalog_grid {
+  .catalog_grid_content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1rem));
+    gap: 2rem 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+
+    @include tablet {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1rem));
+    }
+  }
+
+  .catalog_grid_load_more {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+}
