@@ -36,13 +36,8 @@ function HeroSlide() {
       >
         {movies.map((movie) => (
           <SwiperSlide key={movie.id}>
-            {({ isActive }) => {
-              return (
-                <HeroSlideItem
-                  movie={movie}
-                  classNameProp={`${isActive ? 'active' : ''}`}
-                />
-              );
+            {() => {
+              return <HeroSlideItem movie={movie} classNameProp={'active'} />;
             }}
           </SwiperSlide>
         ))}
