@@ -31,8 +31,8 @@ function HeroSlide() {
         grabCursor={true}
         spaceBetween={0}
         slidesPerView={1}
-        autoplay={{ delay: 3000 }}
         loop={true}
+        autoplay={true}
       >
         {movies.map((movie) => (
           <SwiperSlide key={movie.id}>
