@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import tmdbApi from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
+import noPoster from '../../assets/no-poster.png';
 
 function CastList({ cate, id }) {
   const [cast, setCast] = useState([]);
@@ -24,7 +25,11 @@ function CastList({ cate, id }) {
         <SwiperSlide className="actor_slide" key={`actor_${actor.id}`}>
           <div className="actor-card">
             <img
-              src={apiConfig.w500Image(actor.profile_path)}
+              src={
+                actor.profile_path
+                  ? apiConfig.w500Image(actor.profile_path)
+                  : noPoster
+              }
               alt={actor.name}
             />
             <h3>{actor.name}</h3>

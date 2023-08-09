@@ -6,6 +6,7 @@ import noPoster from '../../assets/no-poster.png';
 import './details.scss';
 import CastList from './CastList';
 import Trailer from './Trailer';
+import SimilarList from './SimilarList';
 
 function Details() {
   const { category, id } = useParams();
@@ -16,6 +17,7 @@ function Details() {
       const params =
         category === 'movie' ? { movie_id: id } : { series_id: id };
       const res = await tmdbApi.detail(category, id, { params });
+      console.log(res);
       setItem(res);
     };
     getItem();
@@ -51,6 +53,16 @@ function Details() {
                     ))}
               </div>
               <p className="mb-2">{item.overview}</p>
+              <div className="item-details">
+                <span>{item.runtime} mins</span>
+                <a
+                  href={`https://www.imdb.com/title/${item.imdb_id}/`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  IMDB
+                </a>
+              </div>
             </div>
           </section>
           <section className="cast container">
@@ -60,6 +72,7 @@ function Details() {
             <CastList cate={category} id={id} />
           </section>
           <Trailer cate={category} id={id} />
+          <SimilarList category={category} id={id} />
         </>
       )}
     </>

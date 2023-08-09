@@ -33,7 +33,7 @@ function Trailer({ cate, id }) {
           ></iframe>
         </>
       ) : (
-        'No Available Trailer'
+        ''
       )}
     </section>
   );

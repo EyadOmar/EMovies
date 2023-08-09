@@ -5,16 +5,21 @@ import './moviesList.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import MovieCard from './MovieCard';
 
-function MoviesList({ categoryProp, type }) {
+function MoviesList({ categoryProp, type, id }) {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
     const getItems = async () => {
       const params = {};
-      const res =
-        categoryProp === category.movie
-          ? await tmdbApi.getMoviesList(type, { params })
-          : await tmdbApi.getTvList(type, { params });
+      let res = null;
+      if (type !== 'similar') {
+        res =
+          categoryProp === category.movie
+            ? await tmdbApi.getMoviesList(type, { params })
+            : await tmdbApi.getTvList(type, { params });
+      } else {
+        res = await tmdbApi.similar(categoryProp, id);
+      }
 
       setItems(res.results);
     };
