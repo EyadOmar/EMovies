@@ -17,7 +17,7 @@ function Footer() {
           <div className="social">
             <a
               target="_blank"
-              href="https://api.whatsapp.com/send?phone=01002379226"
+              href="https://api.whatsapp.com/send?phone=+201002379226"
               rel="noopener noreferrer"
             >
               <i className="bx bxl-whatsapp"></i>
