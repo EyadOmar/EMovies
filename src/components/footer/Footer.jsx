@@ -8,45 +8,35 @@ function Footer() {
         Emoviez
       </Link>
       <div className="footer_content container">
-        <ul>
-          <li>
-            <Link to={'/'}>Home</Link>
-          </li>
-          <li>
-            <Link to={'/'}>Contact us</Link>
-          </li>
-          <li>
-            <Link to={'/'}>Terms of services</Link>
-          </li>
-          <li>
-            <Link to={'/'}>About us</Link>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <Link to={'/'}>Live</Link>
-          </li>
-          <li>
-            <Link to={'/'}>FAQ</Link>
-          </li>
-          <li>
-            <Link to={'/'}>Premium</Link>
-          </li>
-          <li>
-            <Link to={'/'}>Privacy policy</Link>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <Link to={'/'}>You must watch</Link>
-          </li>
-          <li>
-            <Link to={'/'}>Recent releases</Link>
-          </li>
-          <li>
-            <Link to={'/'}>Top IMDB</Link>
-          </li>
-        </ul>
+        <div className="made-by">
+          <span>MadeBy</span>
+          <h4>Eyad Omar</h4>
+        </div>
+        <div className="contact">
+          <p>Feel free to contact me on</p>
+          <div className="social">
+            <a
+              target="_blank"
+              href="https://api.whatsapp.com/send?phone=01002379226"
+              rel="noopener noreferrer"
+            >
+              <i className="bx bxl-whatsapp"></i>
+            </a>
+            <a href="mailto:eiad.omar88@gmail.com">
+              <i className="bx bx-envelope"></i>
+            </a>
+            <a
+              target="_blank"
+              href="https://github.com/EyadOmar"
+              rel="noopener noreferrer"
+            >
+              <i className="bx bxl-github"></i>
+            </a>
+            <a href="tel:+201002379226">
+              <i className="bx bxs-phone"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );
