@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import './index.scss';
 import 'swiper/css';
+import 'swiper/css/bundle';
 import './assets/boxicons-2.0.7/css/boxicons.min.css';
 import { BrowserRouter } from 'react-router-dom';
 

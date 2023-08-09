@@ -1,7 +1,7 @@
 import tmdbApi, { movieType } from '../../api/tmdbApi';
 import { useEffect, useState } from 'react';
 import SwiperCore from 'swiper';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import HeroSlideItem from './HeroSlideItem';
 import './heroSlide.scss';
@@ -10,7 +10,7 @@ import TrailerModal from './TrailerModal';
 function HeroSlide() {
   const [movies, setMovies] = useState([]);
 
-  SwiperCore.use([Autoplay]);
+  SwiperCore.use([Autoplay, Pagination]);
 
   useEffect(() => {
     const getMovies = async () => {
@@ -27,12 +27,14 @@ function HeroSlide() {
   return (
     <div className="hero-slide">
       <Swiper
-        modules={[Autoplay]}
+        className="hero-swiper"
+        modules={[Autoplay, Pagination]}
         grabCursor={true}
         spaceBetween={0}
         slidesPerView={1}
         loop={true}
         autoplay={true}
+        pagination={{ clickable: true }}
       >
         {movies.map((movie) => (
           <SwiperSlide key={movie.id}>
