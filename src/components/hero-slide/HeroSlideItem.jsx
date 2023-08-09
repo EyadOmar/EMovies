@@ -18,7 +18,7 @@ const HeroSlideItem = ({ movie, classNameProp }) => {
 
     if (videos.results.length > 0) {
       const videoSrc =
-        'https://www.youtube.com/embed/' +
+        'https://www.youtube-nocookie.com/embed/' +
         videos.results.filter((video) => video.type === 'Trailer')[0].key;
       trailerModal
         .querySelector('.modal_content > iframe')

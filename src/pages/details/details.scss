@@ -1,0 +1,95 @@
+@use '../../scss/' as *;
+
+.banner {
+  height: 50vh;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &::before {
+    @include overlay();
+  }
+
+  &::after {
+    background-image: linear-gradient(to top, $body-bg, rgba(black, 0));
+  }
+}
+
+.item-content {
+  @include flex(flex-start, flex-start);
+  max-width: 1260px;
+  margin-top: -200px;
+  z-index: 101;
+  position: relative;
+
+  &_poster {
+    flex: 1 0;
+
+    img {
+      border-radius: $border-radius;
+    }
+  }
+
+  &_info {
+    flex-basis: 70%;
+    padding-left: 2rem;
+
+    .title {
+      font-size: 4rem;
+      line-height: 1;
+
+      @include mobile {
+        font-size: 3rem;
+      }
+    }
+
+    .tags {
+      @include flex(center, flex-start);
+      gap: 0.5rem;
+
+      span {
+        padding: 0.5rem 1.5rem;
+        border: 2px solid white;
+        border-radius: $border-radius;
+        font-size: 0.8rem;
+        font-weight: 600;
+        background-color: $body-bg;
+      }
+    }
+  }
+}
+
+.cast {
+  margin-block: 4rem;
+
+  .actor_slide {
+    width: 20% !important;
+    img {
+      border-radius: $border-radius;
+    }
+
+    h3 {
+      text-align: center;
+    }
+  }
+}
+
+.trailer {
+  @include flex(center, center);
+  flex-direction: column;
+  iframe {
+    width: 100%;
+    max-width: 1200px;
+    aspect-ratio: 16 / 9;
+  }
+}
