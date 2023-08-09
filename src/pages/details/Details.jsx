@@ -17,7 +17,6 @@ function Details() {
       const params =
         category === 'movie' ? { movie_id: id } : { series_id: id };
       const res = await tmdbApi.detail(category, id, { params });
-      console.log(res);
       setItem(res);
     };
     getItem();
